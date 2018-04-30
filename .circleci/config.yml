@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: base/devel
+      - image: aitorpazos/archlinux-docker-makepkg
     steps:
       - checkout
       - run:
@@ -10,9 +10,4 @@ jobs:
           command: pacman -Syu --noconfirm
       - run:
           name: Make Package
-          command: pacman -S --needed --noconfirm sudo # Install sudo
-          command: useradd builduser -m # Create the builduser
-          command: passwd -d builduser
-          command: printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers
-          command: su builduser
           command: makepkg
