@@ -11,4 +11,4 @@ jobs:
           command: pacman-key --populate archlinux
       - run:
           name: Make Package
-          command: makepkg
+          command: su -c makepkg
