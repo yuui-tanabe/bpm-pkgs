@@ -13,5 +13,5 @@ jobs:
           command: pacman -S --needed --noconfirm sudo # Install sudo
           command: useradd builduser -m # Create the builduser
           command: passwd -d builduser
-          command: printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers # Allow the builduser passwordless sudo
+          command: printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers
           command: makepkg
