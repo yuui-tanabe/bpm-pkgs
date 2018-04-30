@@ -10,5 +10,5 @@ jobs:
           command: pacman -Syu --noconfirm
       - run:
           name: Make Package
-          command: makepkg -s
+          command: makepkg -s --asroot
         
