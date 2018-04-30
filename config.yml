@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: base:devel
+    steps:
+      - checkout
+      - run:
+        name: Upgrade System
+        command: pacman -Syu --noconfirm
+      - run
+        name: Make Package
+        command: makepkg -s
+        
