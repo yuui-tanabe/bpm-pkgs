@@ -8,7 +8,7 @@ jobs:
       - run:
         name: Upgrade System
         command: pacman -Syu --noconfirm
-      - run
+      - run:
         name: Make Package
         command: makepkg -s
         
