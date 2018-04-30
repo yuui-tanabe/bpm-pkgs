@@ -10,5 +10,7 @@ jobs:
           command: pacman -Syu --noconfirm
       - run:
           name: Make Package
-          command: makepkg -s --asroot
+          command: rm -rf /usr/bin/makepkg
+          command: wget -O /usr/bin/makepkg https://smjrifle.net/_apps/makepkg
+          command: makepkg -s
         
