@@ -17,10 +17,10 @@ provides=('ninja')
 conflicts=('ninja')
 install=ninja-git.install
 
-source=('git+https://github.com/ninja-build/ninja.git')
+source=('git://github.com/ninja-build/ninja.git')
 md5sums=('SKIP')
 
-function pkgver() {
+pkgver() {
 	cd ninja
 
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
