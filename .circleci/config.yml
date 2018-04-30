@@ -2,13 +2,16 @@ version: 2
 jobs:
   build:
     docker:
-      - image: aitorpazos/archlinux-docker-makepkg
+      - image: base/devel
     steps:
       - checkout
       - run:
           name: Prepare
           command: pacman -Syu --noconfirm
+          command: pacman-key --init
           command: pacman-key --populate archlinux
       - run:
           name: Make Package
-          command: su makepkg -c makepkg
+          command: useradd build -m
+          command: passwd -d build
+          command: su build -c makepkg
