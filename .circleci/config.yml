@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Prepare
-          command: pacman -Syu --noconfirm && pacman -Sy docker
+          command: pacman -Syu --noconfirm --noprogressbar && pacman -Sy --noconfirm --noprogressbar docker
       - run:
           name: Make Package
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
