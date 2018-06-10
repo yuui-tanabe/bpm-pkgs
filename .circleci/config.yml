@@ -2,16 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: base/devel
+      - image: archlinux/base
     steps:
       - checkout
       - run:
           name: Prepare
-          command: pacman -Syu --noconfirm
-          command: pacman-key --init
-          command: pacman-key --populate archlinux
+          command: pacman -Syu --noconfirm && pacman -Sy docker
       - run:
           name: Make Package
-          command: useradd build -m
-          command: passwd -d build
-          command: su build -c makepkg
+          command: docker run -v $(pwd):/pkg whynothugo/makepkg
+          
