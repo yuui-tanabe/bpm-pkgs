@@ -2,13 +2,10 @@ version: 2
 jobs:
   build:
     machine: true
-    docker:
-      - image: archlinux/base
     steps:
       - checkout
       - run:
-          name: Prepare
-          command: pacman -Syu --noconfirm --noprogressbar && pacman -Sy --noconfirm --noprogressbar docker
+          name: Install Docker
       - run:
           name: Make Package
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
