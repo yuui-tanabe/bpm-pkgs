@@ -6,6 +6,7 @@ jobs:
       - checkout
       - run:
           name: Install Docker
+          command: curl https://get.docker.com | bash 
       - run:
           name: Make Package
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
