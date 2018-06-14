@@ -1,3 +1,4 @@
+# Circle CI Build Passed
 pkgname=('llvm33')
 pkgver=3.3
 pkgrel=2
