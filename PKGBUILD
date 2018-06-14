@@ -1,4 +1,4 @@
-pkgname=('llvm33')
+pkgname=('llvm33 llvm-libs33 llvm-ocaml33')
 pkgver=3.3
 pkgrel=2
 arch=('i686' 'x86_64')
@@ -136,7 +136,7 @@ check() {
     [[ "${CARCH}" == "i686" ]] || LD_LIBRARY_PATH="${srcdir}/build/lib" make check
     make check-clang
 }
-package_llvm-svn() {
+package_llvm33() {
     pkgdesc='The LLVM Compiler Infrastructure'
     depends=(
         "llvm-libs-svn=${pkgver}-${pkgrel}"
@@ -178,7 +178,7 @@ package_llvm-svn() {
     _install_licenses "${srcdir}/llvm"
 }
 
-package_llvm-libs-svn() {
+package_llvm-libs33() {
     pkgdesc='The LLVM Compiler Infrastructure (runtime libraries)'
     depends=(
         'libffi'
@@ -213,7 +213,7 @@ package_llvm-libs-svn() {
     _install_licenses "${srcdir}/llvm"
 }
 
-package_llvm-ocaml-svn() {
+package_llvm-ocaml33() {
     pkgdesc='OCaml bindings for LLVM'
     depends=(
         "llvm-svn=${pkgver}-${pkgrel}"
