@@ -1,3 +1,4 @@
+# Circle CI Build Passed
 pkgname=wget
 pkgver=1.19.5
 pkgrel=1
