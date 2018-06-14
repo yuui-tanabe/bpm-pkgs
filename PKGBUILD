@@ -6,8 +6,7 @@ url="http://llvm.org/"
 pkgdesc="LLVM 3.3 (installed in /opt/llvm33/)"
 license=('custom:University of Illinois/NCSA Open Source License')
 makedepends=('libffi' 'python2' 'ocaml' 'python-sphinx' 'subversion')
-source=("llvm::http://llvm.org/svn/llvm-project/llvm/branches/release_33")
-validpgpkeys=('C13549BB82A17681BF7143C2B4468DF4E95C63DC') # Bill Wendling
+source=('llvm::http://llvm.org/svn/llvm-project/llvm/branches/release_33')
 sha256sums=('SKIP')
 
 pkgver() {
