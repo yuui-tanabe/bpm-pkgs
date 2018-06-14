@@ -1,4 +1,4 @@
-pkgname=('llvm33 llvm-libs33 llvm-ocaml33')
+pkgname=('llvm33' llvm-libs33' 'llvm-ocaml33')
 pkgver=3.3
 pkgrel=2
 arch=('i686' 'x86_64')
