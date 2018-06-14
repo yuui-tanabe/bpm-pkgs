@@ -1,3 +1,4 @@
+_pkgname=llvm33
 pkgname=('llvm33' 'llvm-libs33' 'llvm-ocaml33')
 pkgver=3.3
 pkgrel=2
@@ -6,7 +7,7 @@ url="http://llvm.org/"
 pkgdesc="LLVM 3.3 (installed in /opt/llvm33/)"
 license=('custom:University of Illinois/NCSA Open Source License')
 makedepends=('libffi' 'python2' 'ocaml' 'python-sphinx')
-source=(http://llvm.org/svn/llvm-project/llvm/branches/release_33/)
+source=(${_pkgname}::http://llvm.org/svn/llvm-project/llvm/branches/release_33/)
 md5sum=('SKIP')
 
 
