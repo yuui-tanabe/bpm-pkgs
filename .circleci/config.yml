@@ -6,14 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Docker
+          name: Get Docker
           command: curl https://get.docker.com | bash 
       - run:
-          name: Make Package
+          name: CI-Build
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
-      - run:
-          name: Make Artifact Folder
-          command: mkdir packages
-      - store_artifacts:
-          path: *.pkg.tar.xz
-          destination: ./packages
