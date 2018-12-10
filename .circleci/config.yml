@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Make Package
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
-          
+      - run:
+          name: Make Artifact Folder
+          command: mkdir packages
       - store_artifacts:
           path: *.pkg.tar.xz
+          destination: ./packages
