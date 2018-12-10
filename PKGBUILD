@@ -108,9 +108,5 @@ package() {
 
   install -Dm644 ${srcdir}/gcc-${pkgver}/COPYING.RUNTIME \
     ${pkgdir}/opt/gcc/share/licenses/$pkgname/RUNTIME.LIBRARY.EXCEPTION
-  cd ${srcdir}/dragonegg-3.3.src
-  LLVM_CONFIG=/opt/llvm33/bin/llvm-config GCC=/opt/gcc/bin/gcc-4.6 make
-  cat <<EOF > /usr/bin/llvm-gcc
-  /opt/gcc/bin/gcc-4.6 -fplugin=
 }
 
