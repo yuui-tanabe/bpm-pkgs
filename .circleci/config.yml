@@ -2,6 +2,7 @@ version: 2
 jobs:
   build:
     machine: true
+    
     steps:
       - checkout
       - run:
@@ -10,5 +11,6 @@ jobs:
       - run:
           name: Make Package
           command: docker run -v $(pwd):/pkg whynothugo/makepkg
+          
       - store_artifacts:
           path: *.pkg.tar.xz
